@@ -1,7 +1,16 @@
 <?php
+// Startar sessionen så att den kan avslutas
 session_start();
+
+// Tar bort alla variabler som är sparade i sessionen
 session_unset();
+
+// Förstör hela sessionen (användaren loggas ut)
 session_destroy();
-header('Location:login.php');
+
+// Skickar användaren tillbaka till inloggningssidan
+header('Location: login.php');
+
+// Avslutar scriptet så inget mer körs
 exit();
 ?>
