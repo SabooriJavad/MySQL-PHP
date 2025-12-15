@@ -38,3 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Knapp för att skicka formuläret -->
     <button>Publicera</button>
 </form>
+
+
+
+<?php include 'footer.php' ?>

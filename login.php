@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['id'];
 
         // Skickar användaren till flödet
-        header("Location: profile.php");
+        header("Location: feed.php");
         exit; // Stoppar vidare körning
 
     } else {

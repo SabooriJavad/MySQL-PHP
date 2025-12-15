@@ -45,9 +45,7 @@ foreach ($commentsStmt as $c) {
     <a href="create-post.php"
         style="padding:10px; background-color:#4CAF50; color:white; text-decoration:none; border-radius:5px;">Skapa nytt
         inlägg</a>
-    <a href="login.php"
-        style="padding:10px; background-color:#f44336; color:white; text-decoration:none; border-radius:5px;">Logga
-        ut</a>
+
 </div>
 
 <?php foreach ($posts as $p): ?>
@@ -90,3 +88,5 @@ foreach ($commentsStmt as $c) {
 
     </div>
 <?php endforeach; ?>
+
+<?php include 'footer.php'; ?>

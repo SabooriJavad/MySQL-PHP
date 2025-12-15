@@ -12,5 +12,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Startar en PHP-session
 // Krävs för att kunna använda $_SESSION (inloggning m.m.)
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+;
 ?>

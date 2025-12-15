@@ -49,7 +49,7 @@ $posts = $pdo->prepare("
 
     FROM posts
     WHERE posts.user_id = ?         
-    ORDER BY posts.created_at DESC   -- 
+    ORDER BY posts.created_at DESC   
 ");
 
 // Kör SQL-frågan och skickar in användarens ID
@@ -63,26 +63,75 @@ $posts = $posts->fetchAll();
 
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8">
-<title>Profile - <?php echo htmlspecialchars($user['username']); ?></title>
-</head>
-<header>
-    <nav>
-        <a href="profile.php">Min profil</a>
-        <a href="feed.php">Flöde</a>
-        <a href="logout.php">Logga ut</a>
-        <a href="login.php">Logga in</a>
-        <a href="create-user.php">Skapa konto</a>
-    </nav>
 
-</header>
+<head>
+    <meta charset="UTF-8">
+    <title>Profile - <?php echo htmlspecialchars($user['username']); ?></title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .profile {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .post {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<h1>
+    Profile page
+</h1>
+<strong> <?php echo htmlspecialchars($user['username']); ?></strong>
+<div class="profile">
+    <p> <?php echo htmlspecialchars($user['created_at']); ?> </p>
+</div>
+<h2> Inlägg</h2>
+<?php foreach ($posts as $post): ?>
+    <div class="post">
+        <p>
+            <?php print nl2br(htmlspecialchars($post['content'])); ?>
+        </p>
+        <small> skapad :<?php print htmlspecialchars($post['created_at']); ?>
+            ❤️
+            <?php print $post['like_count']; ?><br />
+            kommentarer:
+            <?php print $post['comment_count']; ?> </small>
+    </div>
+<?php endforeach ?>
 
 <body>
 
+    <?php include 'footer.php' ?>
 
-    <h1>
-        Profile page
-    </h1>
 
 </body>
 
