@@ -24,8 +24,15 @@ $stmt->execute([
     $_POST['content']
 ]);
 
+$stmt = $pdo->prepare("INSERT IGNORE INTO likes (user_id, post_id) VALUES (?,?)");
+$stmt->execute([$_SESSION['user_id'], $_POST['post_id']]);
+
+
 // Skickar användaren tillbaka till flödet efter att kommentaren sparats
 header("Location: feed.php");
 
 // Avslutar scriptet så inget mer körs efter redirect
 exit;
+
+
+?>
