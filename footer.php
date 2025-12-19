@@ -20,7 +20,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
             <?php if (!$isLoggedIn): ?>
                 <a href="login.php" class="nav-link">Log in</a>
-                <a href="create-user.php" class="nav-link">Register</a>
+                <a href="create-user.php" class="nav-link">Sign up</a>
             <?php else: ?>
                 <a href="profile.php" class="nav-link">Profile</a>
                 <a href="feed.php" class="nav-link">Feed</a>

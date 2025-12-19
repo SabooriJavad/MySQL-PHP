@@ -9,7 +9,7 @@ session_unset();
 session_destroy();
 
 // Skickar användaren tillbaka till inloggningssidan
-header('Location: login.php');
+header('Location: feed.php');
 
 // Avslutar scriptet så inget mer körs
 exit();
