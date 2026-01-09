@@ -12,7 +12,7 @@
     print ('Welcome to my first PHP page');
     ?>
 
-    <?php include 'footer.php'; ?>
+
 
 </body>
 

@@ -1,12 +1,10 @@
 <?php
-// Försöker skapa en anslutning till databasen
+
+// Inkluderar databaskoppling och startar session (via db.php)
+require 'db.php';
 try {
-    // Skapar ett nytt PDO-objekt för MySQL med UTF-8 teckenkodning
-    $pdo = new PDO(
-        "mysql:host=localhost;dbname=microblock;charset=utf8",
-        "root",
-        ""
-    );
+
+
 
     // Gör så att PDO kastar exceptions vid fel
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
